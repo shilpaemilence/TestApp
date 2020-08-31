@@ -5,6 +5,8 @@ import SplashScreen from 'react-native-splash-screen';
 import { StatusBar,Platform,View} from 'react-native';
 import {StatusBarHeight } from './app/constants/helper';
 
+
+console.disableYellowBox = true;
 const MyStatusBar = ({backgroundColor, ...props}) => (
   <View style={[{height:StatusBarHeight}, { backgroundColor }]}>
     <StatusBar translucent backgroundColor={backgroundColor} {...props} />

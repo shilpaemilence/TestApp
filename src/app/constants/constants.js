@@ -1,18 +1,20 @@
 const iconLoc='../../features/assets/icons/';
 const imagesLoc='../../features/assets/';
 
-export const IC_FORWARD=require(imagesLoc+'forward.png');
-export const IC_BACK=require(imagesLoc+'backIcon.png');
-export const IC_GALLERY=require(imagesLoc+'photo.png');
-export const IC_PROFILE=require(imagesLoc+'profile.png');
-export const IC_BACK_WHITE=require(imagesLoc+'white_arrow.png');
-export const IC_BUY=require(iconLoc+'buy.png');
-export const IC_CALENDAR=require(iconLoc+'calendar.png');
-export const IC_CHAT=require(iconLoc+'chat.png');
-export const IC_DOTTED=require(iconLoc+'dotted.png');
-export const IC_LOGO=require(iconLoc+'logo.png');
+
+export const BACK =require(iconLoc+'ic_back.png')
+export const DOTS =require(iconLoc+'ic_doots.png')
+export const DOWNLOAD =require(iconLoc+'ic_download.png')
+export const MSG =require(iconLoc+'ic_message.png')
+export const PLAY =require(iconLoc+'ic_play_btn.png')
+export const SAVE =require(iconLoc+'ic_saved.png')
 
 
+export const DEMO =require(imagesLoc+'Image.png')
 
+export const CIRCLE1 =require(imagesLoc+'Ellipse.png')
+export const CIRCLE2 =require(imagesLoc+'ellipse2.png')
+export const CIRCLE3 =require(imagesLoc+'ellipse3.png')
 
+export const CHECK =require(imagesLoc+'vector.png')
 

@@ -6,7 +6,7 @@ export const cityPickerStyles = StyleSheet.create({
       backgroundColor:'#1B1B1B',
       elevation:7,
       borderRadius:2,
-      borderWidth:Platform.OS==='ios'?1:1,borderColor:'rgba(255, 255, 255, 0.3);',
+     // borderWidth:Platform.OS==='ios'?1:1,borderColor:'rgba(255, 255, 255, 0.3);',
       flex:1,
       borderTopLeftRadius:10,
       borderTopRightRadius:10,
@@ -18,11 +18,14 @@ export const cityPickerStyles = StyleSheet.create({
     },
     cityView:{
         paddingVertical:'3.5%',width:'85%',
-        borderBottomWidth:1,borderBottomColor:'rgba(255, 255, 255, 0.3);',
+        // borderBottomWidth:1,
+        // borderBottomColor:'rgba(255, 255, 255, 0.3);',
         paddingHorizontal:10,
         marginLeft:10
         
     },
+    line:{ height: 1,backgroundColor:'rgba(255, 255, 255, 0.3)',marginHorizontal:'4.9%'},
+
     header:{
         justifyContent:'space-between',
         flexDirection:'row',

@@ -1,19 +1,18 @@
 import React,{Component} from 'react';
 import Modal from 'react-native-modal';
-import {View,Text,TouchableOpacity,ScrollView,Image} from 'react-native';
+import {View,Text,TouchableOpacity,ScrollView} from 'react-native';
 import {cityPickerStyles} from '../styles';
 import { Icon } from 'react-native-elements';
+import NavigationService from '../../layout/NavigationService'
 
-export default class OtherPicker extends Component{
+export default class ProfilePicker extends Component{
     state={
-        other:[{
-            title:'Notifications',src:require('../../../features/assets/images/ic_notification.png')},
-            {title:'Settings',src:require('../../../features/assets/images/ic_settings.png')},
-            {title:'Saved',src:require('../../../features/assets/images/Vector.png')},
-            {title:'Contacts',src:require('../../../features/assets/images/share.png')}]
-
+        cities:['Add to Contacts','Share','Copy Link','Other User Profile','Project Views','Complete Project Views'],
     }
-   
+    handleNavigation=screen=>()=>{
+        this.props.handleModal();
+        NavigationService.navigate(screen);
+    }
     render(){
         const{isModal,handleModal}=this.props;
         return(
@@ -22,9 +21,7 @@ export default class OtherPicker extends Component{
             animationInTiming={500}
             animationOut="slideOutDown"
             animationOutTiming={400}
-            style={{  margin: 0,
-        borderTopEndRadius:10,
-        borderTopStartRadius:10,    }}
+            style={{  margin: 0, borderTopEndRadius:10,borderTopStartRadius:10}}
             onBackdropPress={handleModal}>
               <View style={cityPickerStyles.modalView}>
                   <View style={cityPickerStyles.header}>
@@ -40,19 +37,16 @@ export default class OtherPicker extends Component{
                     />
                   </View>
                   <ScrollView style={{marginBottom:10}}>
-                  {this.state.other.map(res=>{
+                  {this.state.cities.map(res=>{
                       return(
                           <>
-                        <View style={{flexDirection:'row',alignItems:'center'}}>
-                        <Image source={res.src}
-                        style={{height:18,width:20,marginTop:4}} resizeMode="contain"/>
-                        <TouchableOpacity style={cityPickerStyles.cityView}  onPress={handleModal}>
-                            <Text style={cityPickerStyles.cityName}>{res.title}</Text>
-                        </TouchableOpacity>
-
-                        </View>
-                        <View style={[cityPickerStyles.line,{marginLeft:'11%'}]}></View>
-
+                        <TouchableOpacity style={cityPickerStyles.cityView}  onPress={
+                            res=='Other User Profile'?this.handleNavigation('OtherProfile'):
+                            res=='Project Views'?
+                            this.handleNavigation('ProjectView'):res=='Complete Project Views'?this.handleNavigation('Complete'):handleModal}>
+                                <Text style={cityPickerStyles.cityName}>{res}</Text>
+                            </TouchableOpacity>
+                            <View style={cityPickerStyles.line}></View>
                         </>
                       )
                   })}
